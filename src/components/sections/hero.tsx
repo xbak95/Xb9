@@ -42,7 +42,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 text-balance font-display text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-ink sm:text-6xl"
           >
-            Compra, vendi o partecipa a un&apos;asta{" "}
+            Acquista o vendi la tua casa{" "}
             <span className="relative whitespace-nowrap text-brand-red">
               in sicurezza.
               <svg
