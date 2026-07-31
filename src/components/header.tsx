@@ -45,24 +45,24 @@ export function Header() {
           : "bg-white/0"
       )}
     >
-      <div className="container-x flex h-20 items-center justify-between">
+      <div className="container-x flex h-28 items-center justify-between">
         <Link href="#home" className="flex items-center" aria-label="Casa in Chiaro - Home">
           <Image
             src="/logo-compact.png"
             alt="Casa in Chiaro"
-            width={168}
-            height={44}
+            width={336}
+            height={88}
             priority
-            className="h-10 w-auto sm:h-11"
+            className="h-20 w-auto sm:h-[88px]"
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[14.5px] font-medium text-ink/70 transition-colors hover:text-ink"
+              className="whitespace-nowrap text-[14.5px] font-medium text-ink/70 transition-colors hover:text-ink"
             >
               {link.label}
             </a>
@@ -70,8 +70,8 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">
-          <div className="flex items-center gap-2 border-r border-ink/10 pr-5 text-right text-xs leading-tight text-ink/55">
-            <User className="size-4 text-brand-red" />
+          <div className="hidden items-center gap-2 whitespace-nowrap border-r border-ink/10 pr-5 text-right text-xs leading-tight text-ink/55 xl:flex">
+            <User className="size-4 shrink-0 text-brand-red" />
             <span>
               Ingegnere
               <br />
