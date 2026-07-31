@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
+  Check,
   FileCheck2,
   Gavel,
   PenTool,
@@ -11,6 +12,13 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+
+const heroChecklist = [
+  "Verifiche tecniche e urbanistiche",
+  "Documenti chiari e comprensibili",
+  "Più sicurezza, meno sorprese",
+  "Serenità per te e per chi ami",
+];
 
 export function Hero() {
   return (
@@ -68,11 +76,25 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink/65"
           >
-            Verifichiamo documenti, conformità edilizia, urbanistica e catastale,
-            agibilità, APE, documentazione impiantistica e criticità tecniche
-            prima della proposta, del preliminare, del rogito o dell&apos;asta
-            giudiziaria.
+            Verifichiamo per te la situazione tecnica e normativa
+            dell&apos;immobile prima della firma.
           </motion.p>
+
+          <motion.ul
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 flex flex-col gap-3"
+          >
+            {heroChecklist.map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-yellow text-ink">
+                  <Check className="size-4" strokeWidth={3} />
+                </span>
+                <span className="text-[15px] font-medium text-ink/75">{item}</span>
+              </li>
+            ))}
+          </motion.ul>
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}
