@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Check,
-  FileCheck2,
-  Gavel,
-  PenTool,
-  Search,
-  Stamp,
-  Tablet,
-} from "lucide-react";
+import { Check, FileCheck2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -136,67 +128,82 @@ export function Hero() {
           <div className="absolute inset-6 rounded-[2.5rem] bg-cream" />
           <div className="bg-grid absolute inset-6 rounded-[2.5rem] opacity-60" />
 
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative flex h-64 w-64 items-end justify-center">
-              <div className="absolute -bottom-2 h-6 w-48 rounded-full bg-ink/10 blur-md" />
-              <div className="relative z-10 h-40 w-52 rounded-b-2xl bg-brand-yellow shadow-[0_20px_45px_-15px_rgba(23,19,16,0.35)]">
-                <div className="absolute left-1/2 top-6 size-8 -translate-x-1/2 rounded-full bg-brand-red/90" />
-                <div className="absolute bottom-0 left-1/2 h-20 w-14 -translate-x-1/2 rounded-t-lg bg-white/90" />
-              </div>
-              <svg
-                aria-hidden
-                viewBox="0 0 220 90"
-                className="absolute -top-16 left-1/2 z-20 h-24 w-56 -translate-x-1/2"
-              >
-                <path
-                  d="M4 88 L110 6 L216 88"
-                  fill="none"
-                  stroke="#d71920"
-                  strokeWidth="14"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <motion.div
-            className="absolute left-1 top-6 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-[0_14px_30px_-12px_rgba(23,19,16,0.25)] animate-float"
+          <svg
+            aria-hidden
+            viewBox="0 0 480 480"
+            className="absolute inset-6 h-[calc(100%-3rem)] w-[calc(100%-3rem)]"
           >
-            <div className="flex size-8 items-center justify-center rounded-full bg-brand-red-light text-brand-red">
-              <FileCheck2 className="size-4" />
-            </div>
-            <div className="text-xs">
-              <p className="font-semibold text-ink">Planimetria</p>
-              <p className="text-ink/45">verificata</p>
-            </div>
-          </motion.div>
+            <defs>
+              <pattern id="blueprintGrid" width="18" height="18" patternUnits="userSpaceOnUse">
+                <path d="M18 0H0V18" fill="none" stroke="#c3cede" strokeWidth="0.6" />
+              </pattern>
+            </defs>
 
-          <motion.div className="absolute -right-2 top-16 flex size-16 items-center justify-center rounded-2xl bg-white shadow-[0_14px_30px_-12px_rgba(23,19,16,0.25)] animate-float-delayed">
-            <Search className="size-7 text-ink/70" />
-          </motion.div>
+            {/* Blueprint / planimetria sheet */}
+            <g transform="rotate(-3 240 340)">
+              <rect x="55" y="250" width="370" height="175" rx="10" fill="#fbfaf5" stroke="#dcd6c6" strokeWidth="2" />
+              <rect x="67" y="262" width="346" height="151" fill="url(#blueprintGrid)" />
+              <rect x="95" y="285" width="120" height="80" fill="none" stroke="#8fa0bd" strokeWidth="2" />
+              <rect x="230" y="290" width="70" height="45" fill="none" stroke="#8fa0bd" strokeWidth="2" />
+              <path d="M95 325h120M155 285v80" stroke="#8fa0bd" strokeWidth="1.5" />
+              <circle cx="345" cy="360" r="22" fill="none" stroke="#8fa0bd" strokeWidth="2" />
+            </g>
 
-          <motion.div className="absolute bottom-8 -left-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-[0_14px_30px_-12px_rgba(23,19,16,0.25)] animate-float-delayed">
-            <div className="flex size-8 items-center justify-center rounded-full bg-brand-yellow-light text-brand-yellow-dark">
-              <Stamp className="size-4" />
-            </div>
-            <div className="text-xs">
-              <p className="font-semibold text-ink">Agibilità</p>
-              <p className="text-ink/45">conforme</p>
-            </div>
-          </motion.div>
+            {/* Soft shadow under house */}
+            <ellipse cx="235" cy="322" rx="112" ry="16" fill="#171310" opacity="0.12" />
 
-          <motion.div className="absolute -right-3 bottom-24 flex size-14 items-center justify-center rounded-full bg-ink text-white shadow-[0_14px_30px_-12px_rgba(23,19,16,0.35)] animate-float">
-            <Gavel className="size-6" />
-          </motion.div>
+            {/* House body */}
+            <rect x="150" y="185" width="180" height="140" rx="6" fill="#f4c542" />
+            <rect x="150" y="185" width="180" height="140" rx="6" fill="#000000" opacity="0.04" />
+            {/* round window */}
+            <circle cx="205" cy="228" r="17" fill="#241f1a" />
+            {/* small windows */}
+            <rect x="270" y="245" width="28" height="28" rx="2" fill="#241f1a" />
+            {/* door */}
+            <rect x="222" y="257" width="36" height="68" rx="2" fill="#241f1a" />
 
-          <motion.div className="absolute -right-5 -bottom-2 flex h-20 w-28 flex-col justify-between rounded-2xl bg-white p-3 shadow-[0_14px_30px_-12px_rgba(23,19,16,0.25)] animate-float">
-            <Tablet className="size-5 text-ink/60" />
-            <div className="flex items-center justify-between">
-              <span className="h-1.5 w-12 rounded-full bg-cream-dark" />
-              <PenTool className="size-3.5 text-brand-red" />
-            </div>
-          </motion.div>
+            {/* Roof */}
+            <path
+              d="M120 195 L240 95 L360 195 L360 178 L246 82 C243 79.5 237 79.5 234 82 L120 178 Z"
+              fill="#d71920"
+            />
+            <path d="M120 195 L240 95 L360 195" fill="none" stroke="#a3131a" strokeWidth="3" strokeLinejoin="round" />
+            {/* chimney */}
+            <rect x="318" y="108" width="20" height="34" fill="#d71920" stroke="#a3131a" strokeWidth="2" />
+
+            {/* Keys */}
+            <g transform="translate(60 372) rotate(-8)">
+              <circle cx="0" cy="0" r="13" fill="none" stroke="#9aa0a6" strokeWidth="5" />
+              <rect x="10" y="-3" width="34" height="6" rx="3" fill="#9aa0a6" />
+              <rect x="40" y="-2" width="6" height="10" fill="#9aa0a6" />
+              <rect x="50" y="-2" width="6" height="14" fill="#9aa0a6" />
+            </g>
+            <g transform="translate(66 372) rotate(14)">
+              <rect x="10" y="-2.5" width="46" height="5" rx="2.5" fill="#b7bcc2" />
+              <rect x="52" y="-1.5" width="5" height="8" fill="#b7bcc2" />
+              <rect x="60" y="-1.5" width="5" height="11" fill="#b7bcc2" />
+            </g>
+
+            {/* Key tag / fob (echoes the logo tag) */}
+            <g transform="translate(120 392) rotate(10)">
+              <rect x="-18" y="-16" width="36" height="32" rx="8" fill="#d71920" stroke="#a3131a" strokeWidth="2" />
+              <path
+                d="M-9 0 L-2 8 L11 -8"
+                fill="none"
+                stroke="#f4c542"
+                strokeWidth="4.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+
+            {/* Pen */}
+            <g transform="translate(300 400) rotate(-24)">
+              <rect x="-70" y="-7" width="140" height="14" rx="7" fill="#20201f" />
+              <rect x="40" y="-7" width="18" height="14" fill="#f4c542" />
+              <path d="M58 -7 L74 0 L58 7 Z" fill="#3a3a38" />
+            </g>
+          </svg>
         </motion.div>
       </div>
     </section>
