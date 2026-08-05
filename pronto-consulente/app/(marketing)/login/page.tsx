@@ -78,19 +78,19 @@ export default function LoginPage() {
           <ul className="mt-8 space-y-4">
             <li className="flex items-start gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-navy">
-                <ShieldCheck className="h-4.5 w-4.5" />
+                <ShieldCheck className="h-[18px] w-[18px]" />
               </span>
               <p className="text-sm text-body">Consulenti verificati e recensioni autentiche.</p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-navy">
-                <Users className="h-4.5 w-4.5" />
+                <Users className="h-[18px] w-[18px]" />
               </span>
               <p className="text-sm text-body">Oltre 2.500 professionisti in 21 aree di competenza.</p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-navy">
-                <Star className="h-4.5 w-4.5" />
+                <Star className="h-[18px] w-[18px]" />
               </span>
               <p className="text-sm text-body">Valutazione media 4,8/5 su oltre 3.000 recensioni.</p>
             </li>
@@ -164,7 +164,7 @@ export default function LoginPage() {
                       aria-label={showPassword ? "Nascondi password" : "Mostra password"}
                       className="absolute right-3 top-1/2 -translate-y-1/2 text-body hover:text-navy"
                     >
-                      {showPassword ? <EyeOff className="h-4.5 w-4.5" /> : <Eye className="h-4.5 w-4.5" />}
+                      {showPassword ? <EyeOff className="h-[18px] w-[18px]" /> : <Eye className="h-[18px] w-[18px]" />}
                     </button>
                   </div>
                   {errors.password && <FieldError>{errors.password}</FieldError>}

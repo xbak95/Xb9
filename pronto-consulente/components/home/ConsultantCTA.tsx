@@ -33,7 +33,7 @@ export function ConsultantCTA() {
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {capabilities.map((c) => (
               <li key={c.label} className="flex items-center gap-3 rounded-xl bg-muted px-4 py-3.5 text-sm font-medium text-navy-800">
-                <c.icon className="h-4.5 w-4.5 shrink-0 text-institutional" />
+                <c.icon className="h-[18px] w-[18px] shrink-0 text-institutional" />
                 {c.label}
               </li>
             ))}

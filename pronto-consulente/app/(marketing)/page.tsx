@@ -10,7 +10,7 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ConsultantCTA } from "@/components/home/ConsultantCTA";
 
 export const metadata: Metadata = {
-  title: "Pronto Consulente — La consulenza giusta. Subito.",
+  title: { absolute: "Pronto Consulente — La consulenza giusta. Subito." },
   description:
     "Trova, confronta e prenota consulenti qualificati in finanza agevolata, legale, HSE, marketing, cybersecurity e altri 18 settori. Prezzi chiari, recensioni verificate.",
 };

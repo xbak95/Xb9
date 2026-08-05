@@ -160,7 +160,7 @@ export function Step12Preview({
       </section>
 
       <Button type="button" variant="gold" fullWidth size="lg" onClick={onPublish} className="gap-2">
-        <Rocket className="h-4.5 w-4.5" />
+        <Rocket className="h-[18px] w-[18px]" />
         Pubblica il mio profilo
       </Button>
     </div>

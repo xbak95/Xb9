@@ -286,7 +286,7 @@ export function ConversationView({
                 aria-label="Allega un file"
                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-body hover:bg-muted hover:text-navy"
               >
-                <Paperclip className="h-4.5 w-4.5" />
+                <Paperclip className="h-[18px] w-[18px]" />
               </button>
               <input
                 value={draft}
