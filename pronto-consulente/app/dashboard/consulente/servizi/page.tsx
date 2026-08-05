@@ -41,7 +41,22 @@ export default function ServiziPage() {
   function openNew() {
     setForm(emptyForm);
     setIsNew(true);
-    setEditTarget({ ...emptyForm, id: "new", consultantId: consultants[0].id, price: 0, category: "Consulenza", rating: 0, reviewCount: 0, attivo: true });
+    setEditTarget({
+      id: "new",
+      consultantId: consultants[0].id,
+      title: "",
+      price: 0,
+      priceType: "fisso",
+      durationMinutes: 60,
+      deliveryTime: "",
+      modality: "online",
+      description: "",
+      includes: [],
+      category: "Consulenza",
+      rating: 0,
+      reviewCount: 0,
+      attivo: true,
+    });
   }
 
   function openEdit(s: ServiceWithStatus) {
