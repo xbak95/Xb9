@@ -487,7 +487,7 @@ export function BookingFlow({ services, availability, consultantName, onClose }:
 
 export function BookingButton({
   consultant,
-  label = "Prenota una consulenza",
+  label = "Prenota consulenza",
   variant = "primary",
   size = "md",
   className,

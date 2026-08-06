@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search, MapPin, ShieldCheck, Tag, Star, Lock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Select } from "@/components/ui/Field";
@@ -20,7 +20,14 @@ export function Hero() {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState("");
   const [modality, setModality] = useState("indifferente");
-  const [placeholderIndex] = useState(() => Math.floor(Math.random() * placeholders.length));
+  // Parte da un indice fisso così server e client rendono lo stesso markup,
+  // poi ruota dopo l'idratazione: niente mismatch, placeholder comunque vivo.
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setPlaceholderIndex((i) => (i + 1) % placeholders.length), 2800);
+    return () => clearInterval(id);
+  }, []);
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
