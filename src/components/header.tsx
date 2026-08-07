@@ -46,14 +46,14 @@ export function Header() {
       )}
     >
       <div className="container-x flex h-28 items-center justify-between">
-        <Link href="#home" className="flex items-center" aria-label="Casa in Chiaro - Home">
+        <Link href="#home" className="flex shrink-0 items-center" aria-label="Casa in Chiaro - Home">
           <Image
             src="/logo-compact.png"
             alt="Casa in Chiaro"
             width={336}
             height={88}
             priority
-            className="h-20 w-auto sm:h-[88px]"
+            className="h-20 w-auto shrink-0 sm:h-[88px]"
           />
         </Link>
 
