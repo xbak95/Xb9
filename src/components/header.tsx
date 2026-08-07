@@ -45,7 +45,7 @@ export function Header() {
           : "bg-white/0"
       )}
     >
-      <div className="container-x flex h-28 items-center justify-between">
+      <div className="container-x flex h-28 items-center gap-8">
         <Link href="#home" className="flex shrink-0 items-center" aria-label="Casa in Chiaro - Home">
           <Image
             src="/logo-compact.png"
@@ -57,7 +57,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -69,7 +69,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="ml-auto hidden items-center gap-5 lg:flex">
           <div className="hidden items-center gap-2 whitespace-nowrap border-r border-ink/10 pr-5 text-right text-xs leading-tight text-ink/55 xl:flex">
             <User className="size-4 shrink-0 text-brand-red" />
             <span>
@@ -86,7 +86,7 @@ export function Header() {
         <button
           aria-label={open ? "Chiudi il menu" : "Apri il menu"}
           onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-full text-ink lg:hidden"
+          className="ml-auto flex size-10 shrink-0 items-center justify-center rounded-full text-ink lg:hidden"
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
