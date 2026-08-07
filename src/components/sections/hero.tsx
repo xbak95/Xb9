@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Check, FileCheck2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -128,82 +129,21 @@ export function Hero() {
           <div className="absolute inset-6 rounded-[2.5rem] bg-cream" />
           <div className="bg-grid absolute inset-6 rounded-[2.5rem] opacity-60" />
 
-          <svg
-            aria-hidden
-            viewBox="0 0 480 480"
-            className="absolute inset-6 h-[calc(100%-3rem)] w-[calc(100%-3rem)]"
-          >
-            <defs>
-              <pattern id="blueprintGrid" width="18" height="18" patternUnits="userSpaceOnUse">
-                <path d="M18 0H0V18" fill="none" stroke="#c3cede" strokeWidth="0.6" />
-              </pattern>
-            </defs>
-
-            {/* Blueprint / planimetria sheet */}
-            <g transform="rotate(-3 240 340)">
-              <rect x="55" y="250" width="370" height="175" rx="10" fill="#fbfaf5" stroke="#dcd6c6" strokeWidth="2" />
-              <rect x="67" y="262" width="346" height="151" fill="url(#blueprintGrid)" />
-              <rect x="95" y="285" width="120" height="80" fill="none" stroke="#8fa0bd" strokeWidth="2" />
-              <rect x="230" y="290" width="70" height="45" fill="none" stroke="#8fa0bd" strokeWidth="2" />
-              <path d="M95 325h120M155 285v80" stroke="#8fa0bd" strokeWidth="1.5" />
-              <circle cx="345" cy="360" r="22" fill="none" stroke="#8fa0bd" strokeWidth="2" />
-            </g>
-
-            {/* Soft shadow under house */}
-            <ellipse cx="235" cy="322" rx="112" ry="16" fill="#171310" opacity="0.12" />
-
-            {/* House body */}
-            <rect x="150" y="185" width="180" height="140" rx="6" fill="#f4c542" />
-            <rect x="150" y="185" width="180" height="140" rx="6" fill="#000000" opacity="0.04" />
-            {/* round window */}
-            <circle cx="205" cy="228" r="17" fill="#241f1a" />
-            {/* small windows */}
-            <rect x="270" y="245" width="28" height="28" rx="2" fill="#241f1a" />
-            {/* door */}
-            <rect x="222" y="257" width="36" height="68" rx="2" fill="#241f1a" />
-
-            {/* Roof */}
-            <path
-              d="M120 195 L240 95 L360 195 L360 178 L246 82 C243 79.5 237 79.5 234 82 L120 178 Z"
-              fill="#d71920"
-            />
-            <path d="M120 195 L240 95 L360 195" fill="none" stroke="#a3131a" strokeWidth="3" strokeLinejoin="round" />
-            {/* chimney */}
-            <rect x="318" y="108" width="20" height="34" fill="#d71920" stroke="#a3131a" strokeWidth="2" />
-
-            {/* Keys */}
-            <g transform="translate(60 372) rotate(-8)">
-              <circle cx="0" cy="0" r="13" fill="none" stroke="#9aa0a6" strokeWidth="5" />
-              <rect x="10" y="-3" width="34" height="6" rx="3" fill="#9aa0a6" />
-              <rect x="40" y="-2" width="6" height="10" fill="#9aa0a6" />
-              <rect x="50" y="-2" width="6" height="14" fill="#9aa0a6" />
-            </g>
-            <g transform="translate(66 372) rotate(14)">
-              <rect x="10" y="-2.5" width="46" height="5" rx="2.5" fill="#b7bcc2" />
-              <rect x="52" y="-1.5" width="5" height="8" fill="#b7bcc2" />
-              <rect x="60" y="-1.5" width="5" height="11" fill="#b7bcc2" />
-            </g>
-
-            {/* Key tag / fob (echoes the logo tag) */}
-            <g transform="translate(120 392) rotate(10)">
-              <rect x="-18" y="-16" width="36" height="32" rx="8" fill="#d71920" stroke="#a3131a" strokeWidth="2" />
-              <path
-                d="M-9 0 L-2 8 L11 -8"
-                fill="none"
-                stroke="#f4c542"
-                strokeWidth="4.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          <div className="absolute inset-6 flex items-center justify-center">
+            <motion.div
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-3/4 max-w-[300px]"
+            >
+              <Image
+                src="/logo.png"
+                alt="Casa in Chiaro"
+                width={815}
+                height={280}
+                className="h-auto w-full drop-shadow-[0_20px_35px_rgba(23,19,16,0.18)]"
               />
-            </g>
-
-            {/* Pen */}
-            <g transform="translate(300 400) rotate(-24)">
-              <rect x="-70" y="-7" width="140" height="14" rx="7" fill="#20201f" />
-              <rect x="40" y="-7" width="18" height="14" fill="#f4c542" />
-              <path d="M58 -7 L74 0 L58 7 Z" fill="#3a3a38" />
-            </g>
-          </svg>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
