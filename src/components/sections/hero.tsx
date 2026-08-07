@@ -126,23 +126,15 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto aspect-square w-full max-w-[480px]"
         >
-          <div className="absolute inset-6 rounded-[2.5rem] bg-cream" />
-          <div className="bg-grid absolute inset-6 rounded-[2.5rem] opacity-60" />
-
-          <div className="absolute inset-6 flex items-center justify-center">
-            <motion.div
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-3/4 max-w-[300px]"
-            >
-              <Image
-                src="/logo.png"
-                alt="Casa in Chiaro"
-                width={815}
-                height={280}
-                className="h-auto w-full drop-shadow-[0_20px_35px_rgba(23,19,16,0.18)]"
-              />
-            </motion.div>
+          <div className="absolute inset-6 overflow-hidden rounded-[2.5rem] shadow-[0_30px_60px_-25px_rgba(23,19,16,0.35)]">
+            <Image
+              src="/hero-house.jpg"
+              alt="Casetta su una planimetria, con chiavi e penna"
+              fill
+              priority
+              sizes="(min-width: 1024px) 480px, 90vw"
+              className="object-cover"
+            />
           </div>
         </motion.div>
       </div>
