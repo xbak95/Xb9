@@ -6,15 +6,13 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, User, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#verifichiamo", label: "Servizi" },
-  { href: "#come-lavoriamo", label: "Come lavoriamo" },
+  { href: "#verifichiamo", label: "Cosa verifichiamo" },
   { href: "#per-chi", label: "Per chi" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#come-lavoriamo", label: "Come lavoriamo" },
   { href: "#contatti", label: "Contatti" },
 ];
 
@@ -58,29 +56,29 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
+          {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap text-[14.5px] font-medium text-ink/70 transition-colors hover:text-ink"
+              className={cn(
+                "relative whitespace-nowrap pb-1 text-[13px] font-bold tracking-wide uppercase transition-colors",
+                i === 0
+                  ? "text-brand-red after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:rounded-full after:bg-brand-red"
+                  : "text-ink hover:text-brand-red"
+              )}
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="ml-auto hidden items-center gap-5 lg:flex">
-          <div className="hidden items-center gap-2 whitespace-nowrap border-r border-ink/10 pr-5 text-right text-xs leading-tight text-ink/55 xl:flex">
-            <User className="size-4 shrink-0 text-brand-red" />
-            <span>
-              Ingegnere
-              <br />
-              libero professionista
-            </span>
-          </div>
-          <Button asChild size="sm">
-            <a href="#contatti">Richiedi una verifica</a>
-          </Button>
+        <div className="ml-auto hidden items-center gap-3 whitespace-nowrap border-l border-ink/15 pl-5 lg:flex">
+          <User className="size-5 shrink-0 text-brand-red" />
+          <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-ink">
+            Ingegnere
+            <br />
+            libero professionista
+          </span>
         </div>
 
         <button
@@ -102,19 +100,23 @@ export function Header() {
             className="overflow-hidden border-t border-ink/8 bg-white lg:hidden"
           >
             <nav className="container-x flex flex-col gap-1 py-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, i) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-3 py-3 text-[15px] font-medium text-ink/75 transition-colors hover:bg-cream hover:text-ink"
+                  className={cn(
+                    "rounded-xl px-3 py-3 text-[15px] font-bold uppercase tracking-wide transition-colors",
+                    i === 0 ? "text-brand-red" : "text-ink/75 hover:bg-cream hover:text-ink"
+                  )}
                 >
                   {link.label}
                 </a>
               ))}
-              <Button asChild className="mt-2 w-full" onClick={() => setOpen(false)}>
-                <a href="#contatti">Richiedi una verifica</a>
-              </Button>
+              <div className="mt-2 flex items-center gap-2 border-t border-ink/8 px-3 pt-4 text-xs font-bold uppercase tracking-wide text-ink">
+                <User className="size-4 shrink-0 text-brand-red" />
+                Ingegnere libero professionista
+              </div>
             </nav>
           </motion.div>
         )}

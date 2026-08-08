@@ -124,16 +124,26 @@ export function Hero() {
           initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto aspect-square w-full max-w-[480px]"
+          className="relative mx-auto w-full max-w-[620px]"
         >
-          <div className="absolute inset-6 overflow-hidden rounded-[2.5rem] shadow-[0_30px_60px_-25px_rgba(23,19,16,0.35)]">
+          <div
+            className="relative aspect-[702/346] w-full"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 14%), linear-gradient(to top, transparent 0%, black 8%)",
+              WebkitMaskComposite: "source-in",
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 14%), linear-gradient(to top, transparent 0%, black 8%)",
+              maskComposite: "intersect",
+            }}
+          >
             <Image
-              src="/hero-house.jpg"
+              src="/hero-house-illustration.png"
               alt="Casetta su una planimetria, con chiavi e penna"
               fill
               priority
-              sizes="(min-width: 1024px) 480px, 90vw"
-              className="object-cover"
+              sizes="(min-width: 1024px) 620px, 90vw"
+              className="object-contain"
             />
           </div>
         </motion.div>
