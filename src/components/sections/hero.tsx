@@ -22,7 +22,7 @@ export function Hero() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute top-52 -left-32 size-[380px] rounded-full bg-brand-red/10 blur-3xl"
+        className="pointer-events-none absolute top-52 -left-32 size-[380px] rounded-full bg-brand-yellow/15 blur-3xl"
       />
 
       <div className="container-x relative grid items-center gap-16 lg:grid-cols-2 lg:gap-10">
@@ -63,15 +63,38 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink/65"
+            className="mt-6 max-w-xl space-y-3 text-[14px] leading-relaxed text-ink/65"
           >
-            Verifichiamo per te la situazione tecnica e normativa
-            dell&apos;immobile prima della firma.
-          </motion.p>
+            <p>Prima di comprare o vendere casa, metti tutto in chiaro.</p>
+            <p>
+              Casa in chiaro verifica l&apos;immobile attraverso documenti
+              ufficiali, accesso agli atti, sopralluogo, rilievo e controlli
+              tecnici mirati.
+            </p>
+            <p>
+              Analizziamo conformità edilizia e urbanistica, stato legittimo,
+              corrispondenza metrica tra stato reale e documentazione,
+              conformità catastale oggettiva e soggettiva, agibilità, APE,
+              documentazione impiantistica, condizioni manutentive, stato
+              delle parti comuni condominiali, eventuali difformità e
+              possibilità preliminari di sanatoria.
+            </p>
+            <p>
+              Quando richiesto, la verifica può essere integrata con una
+              stima tecnico-estimativa del valore dell&apos;immobile e con un
+              computo metrico preliminare per valutare i costi indicativi di
+              ristrutturazione.
+            </p>
+            <p>
+              Perché il prezzo di una casa non dice tutto: contano anche i
+              documenti, le misure, lo stato reale, le criticità e le spese
+              che potrebbero emergere dopo l&apos;acquisto.
+            </p>
+          </motion.div>
 
           <motion.ul
             initial={{ opacity: 0, y: 18 }}
