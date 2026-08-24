@@ -25,7 +25,24 @@ export function IntroBanner() {
           className="relative z-10"
         >
           <h2 className="text-balance font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-4xl">
-            Prima di comprare o vendere casa, verifica.
+            Acquista o vendi la tua casa{" "}
+            <span className="relative whitespace-nowrap text-brand-red">
+              in sicurezza.
+              <svg
+                aria-hidden
+                viewBox="0 0 300 12"
+                className="absolute -bottom-1 left-0 h-3 w-full text-brand-yellow"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 9C60 2 240 2 298 9"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
           </h2>
           <p className="mt-5 max-w-md text-[14px] leading-relaxed text-ink/65">
             Casa in chiaro offre assistenza tecnico-normativa alla
