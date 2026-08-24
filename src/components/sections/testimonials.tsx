@@ -67,7 +67,7 @@ export function Testimonials() {
                   </div>
                   <div>
                     <p className="font-semibold text-ink">{testimonials[index].name}</p>
-                    <p className="text-sm text-ink/50">{testimonials[index].role}</p>
+                    <p className="text-sm text-ink/60">{testimonials[index].role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -78,27 +78,31 @@ export function Testimonials() {
             <button
               aria-label="Testimonianza precedente"
               onClick={() => go(index - 1)}
-              className="flex size-11 items-center justify-center rounded-full border border-ink/10 text-ink/60 transition-colors hover:bg-cream hover:text-ink"
+              className="flex size-11 items-center justify-center rounded-full border border-ink/10 text-ink/60 transition-colors hover:bg-cream hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2"
             >
               <ChevronLeft className="size-5" />
             </button>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center">
               {testimonials.map((t, i) => (
                 <button
                   key={t.name}
                   aria-label={`Vai alla testimonianza ${i + 1}`}
                   onClick={() => go(i)}
-                  className={cn(
-                    "h-2 rounded-full transition-all duration-300",
-                    i === index ? "w-6 bg-brand-red" : "w-2 bg-ink/15 hover:bg-ink/30"
-                  )}
-                />
+                  className="flex size-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2"
+                >
+                  <span
+                    className={cn(
+                      "h-2 rounded-full transition-all duration-300",
+                      i === index ? "w-6 bg-brand-red" : "w-2 bg-ink/15"
+                    )}
+                  />
+                </button>
               ))}
             </div>
             <button
               aria-label="Testimonianza successiva"
               onClick={() => go(index + 1)}
-              className="flex size-11 items-center justify-center rounded-full border border-ink/10 text-ink/60 transition-colors hover:bg-cream hover:text-ink"
+              className="flex size-11 items-center justify-center rounded-full border border-ink/10 text-ink/60 transition-colors hover:bg-cream hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2"
             >
               <ChevronRight className="size-5" />
             </button>

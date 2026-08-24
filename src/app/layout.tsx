@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
+import { MotionProvider } from "@/components/motion-provider";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -97,7 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white font-sans text-ink antialiased selection:bg-brand-yellow">
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

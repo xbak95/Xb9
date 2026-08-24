@@ -84,7 +84,7 @@ export function Header() {
         <button
           aria-label={open ? "Chiudi il menu" : "Apri il menu"}
           onClick={() => setOpen((v) => !v)}
-          className="ml-auto flex size-10 shrink-0 items-center justify-center rounded-full text-ink lg:hidden"
+          className="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full text-ink transition-colors hover:bg-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2 lg:hidden"
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>

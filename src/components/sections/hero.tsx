@@ -133,7 +133,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 flex items-center gap-6 text-sm text-ink/45"
+            className="mt-10 flex items-center gap-6 text-sm text-ink/60"
           >
             <span>Indipendenti</span>
             <span className="size-1 rounded-full bg-ink/20" />

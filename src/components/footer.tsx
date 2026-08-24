@@ -79,7 +79,7 @@ export function Footer() {
                   key={i}
                   href="#"
                   aria-label="Social"
-                  className="flex size-10 items-center justify-center rounded-full bg-cream text-ink/60 transition-colors hover:bg-brand-red hover:text-white"
+                  className="flex size-11 items-center justify-center rounded-full bg-cream text-ink/60 transition-colors hover:bg-brand-red hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2"
                 >
                   <Icon className="size-4" />
                 </a>
@@ -132,7 +132,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-ink/8 py-7 text-sm text-ink/45 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-ink/8 py-7 text-sm text-ink/60 sm:flex-row">
           <p>© {new Date().getFullYear()} Casa in Chiaro. Tutti i diritti riservati.</p>
           <p>Ingegnere libero professionista</p>
         </div>
