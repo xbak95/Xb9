@@ -1,9 +1,63 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+
+type HouseProps = {
+  cx: number;
+  scale: number;
+  variant: "muted" | "highlight";
+};
+
+function ModelHouse({ cx, scale, variant }: HouseProps) {
+  const w = 130 * scale;
+  const h = 110 * scale;
+  const roofH = 66 * scale;
+  const baseY = 360;
+  const bodyTop = baseY - h;
+  const roofTip = bodyTop - roofH;
+  const isHighlight = variant === "highlight";
+
+  const body = isHighlight ? "#f4c542" : "#f3f1ec";
+  const roof = isHighlight ? "#d71920" : "#e4e1d8";
+  const stroke = isHighlight ? "#b0141a" : "#c9c6bc";
+  const accent = isHighlight ? "#d71920" : "#c9c6bc";
+  const door = isHighlight ? "#3a2f1c" : "#cfccc2";
+  const opacity = isHighlight ? 1 : 0.85;
+
+  return (
+    <g opacity={opacity}>
+      <ellipse cx={cx} cy={baseY + 6} rx={w * 0.62} ry={7 * scale} fill="#171310" opacity={0.08} />
+      <rect
+        x={cx - w / 2}
+        y={bodyTop}
+        width={w}
+        height={h}
+        rx={3 * scale}
+        fill={body}
+        stroke={stroke}
+        strokeWidth={2}
+      />
+      <path
+        d={`M${cx - w / 2 - 6 * scale} ${bodyTop} L${cx} ${roofTip} L${cx + w / 2 + 6 * scale} ${bodyTop} Z`}
+        fill={roof}
+        stroke={stroke}
+        strokeWidth={2}
+        strokeLinejoin="round"
+      />
+      <circle cx={cx} cy={bodyTop + h * 0.32} r={7.5 * scale} fill="none" stroke={accent} strokeWidth={2.5} />
+      <rect
+        x={cx - 9 * scale}
+        y={baseY - 24 * scale}
+        width={18 * scale}
+        height={24 * scale}
+        rx={1.5 * scale}
+        fill={door}
+      />
+    </g>
+  );
+}
 
 export function IntroBanner() {
   return (
@@ -53,27 +107,40 @@ export function IntroBanner() {
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto aspect-[751/417] w-full max-w-[620px]"
+          className="relative mx-auto aspect-[750/420] w-full max-w-[620px]"
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, black 22%, black 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
-              WebkitMaskComposite: "source-in",
-              maskImage:
-                "linear-gradient(to right, transparent 0%, black 22%, black 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
-              maskComposite: "intersect",
-            }}
+          <svg
+            aria-hidden
+            viewBox="0 0 750 420"
+            className="absolute inset-0 h-full w-full overflow-visible"
           >
-            <Image
-              src="/hero-banner-houses.jpg"
-              alt="Fila di casette modello, una evidenziata con cartellino di verifica"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-contain"
-            />
-          </div>
+            <ModelHouse cx={65} scale={0.68} variant="muted" />
+            <ModelHouse cx={210} scale={0.86} variant="muted" />
+            <ModelHouse cx={390} scale={1.2} variant="highlight" />
+            <ModelHouse cx={565} scale={0.94} variant="muted" />
+            <ModelHouse cx={700} scale={0.72} variant="muted" />
+
+            {/* key tag hanging from the highlighted house */}
+            <g transform="translate(300 318) scale(1.3) rotate(15)">
+              <path
+                d="M0 -18 Q26 -30 46 -6"
+                fill="none"
+                stroke="#3a3a38"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+              <rect x="-2" y="-2" width="40" height="34" rx="9" fill="#d71920" stroke="#b0141a" strokeWidth="2" />
+              <circle cx="10" cy="7" r="3.2" fill="none" stroke="#f4c542" strokeWidth="2" />
+              <path
+                d="M6 20 L14 27 L30 8"
+                fill="none"
+                stroke="#241f1a"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </svg>
         </motion.div>
       </div>
     </section>
