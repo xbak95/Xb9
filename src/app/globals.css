@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #171310;
+  --color-cream: #f6f3ea;
+  --color-cream-dark: #efe9da;
+  --color-brand-red: #d71920;
+  --color-brand-red-dark: #b01319;
+  --color-brand-red-light: #fdecec;
+  --color-brand-yellow: #f4c542;
+  --color-brand-yellow-dark: #dcaa22;
+  --color-brand-yellow-light: #fdf6e3;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
+
+  --animate-accordion-down: accordion-down 0.25s ease-out;
+  --animate-accordion-up: accordion-up 0.25s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 7s ease-in-out 1.2s infinite;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(1.5deg);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171310;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: var(--color-brand-yellow);
+  color: var(--color-ink);
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(23, 19, 16, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
