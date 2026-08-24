@@ -18,7 +18,7 @@ export function Hero() {
     <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 size-[520px] rounded-full bg-brand-yellow/20 blur-3xl"
+        className="pointer-events-none absolute top-0 -right-40 size-[520px] rounded-full bg-brand-yellow/20 blur-3xl"
       />
       <div
         aria-hidden
