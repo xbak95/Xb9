@@ -73,15 +73,6 @@ export function IntroBanner() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-contain"
             />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(244,197,66,0.65) 0%, rgba(244,197,66,0.32) 22%, rgba(244,197,66,0) 46%)",
-                mixBlendMode: "multiply",
-              }}
-            />
           </div>
         </motion.div>
       </div>
